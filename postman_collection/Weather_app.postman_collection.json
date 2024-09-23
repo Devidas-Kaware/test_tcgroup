@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "ad0a8ab8-0c7b-4257-8224-a0d9cb4ac20e",
+		"name": "Weather_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Current Weather Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postalCode\":94040,\r\n    \"userName\":\"Shyam\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/api/weatherDetails/fetch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"weatherDetails",
+						"fetch"
+					],
+					"query": [
+						{
+							"key": "postalCode",
+							"value": "94040",
+							"disabled": true
+						},
+						{
+							"key": "userName",
+							"value": "Shyam",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History by Postal Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/weatherDetails/history?postalCode=94040",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"weatherDetails",
+						"history"
+					],
+					"query": [
+						{
+							"key": "postalCode",
+							"value": "94040"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History by user Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/weatherDetails/history?userName=Shyam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"weatherDetails",
+						"history"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Shyam"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History by user Name and postal code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/weatherDetails/history?userName=Shyam&postalCode=94040",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"weatherDetails",
+						"history"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Shyam"
+						},
+						{
+							"key": "postalCode",
+							"value": "94040"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
