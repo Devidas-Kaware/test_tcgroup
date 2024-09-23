@@ -29,8 +29,12 @@ This is a Spring Boot application that fetches current weather data based on a g
 ```bash
 git clone https://github.com/yourusername/weather-details-app.git
 cd weather-details-app
+```
 
-### Create Database and configure in application.properties
+### Create Database and Configure in application.properties
+1. Create a MySQL database named weather_app_db.
+2. Configure your application properties:
+```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/weather_app_db
 spring.datasource.username=your_db_username
 spring.datasource.password=your_db_password
@@ -39,26 +43,27 @@ spring.jpa.hibernate.ddl-auto=update
 weather.api.url=http://api.openweathermap.org/data/2.5/weather
 weather.api.key=your_api_key
 weather.api.country=us
+```
 
-## Build the Application :
-mvn clean install
+### Run the Application 
 
-## Run the Application :
-mvn spring-boot:run
+#### The application will start on http://localhost:8081.
 
-### The application will start on http://localhost:8081.
+#### Postman Collection link : https://github.com/Devidas-Kaware/test_tcgroup/blob/master/postman_collection
 
 ## API Endpoints
-###Fetch Weather Data
-URL: /v1/api/weatherDetails/fetch
-Method: POST
-Request Body :
+### Fetch Weather Data
+- URL: /v1/api/weatherDetails/fetch
+- Method: POST
+- Request Body :
+```bash
 {
   "postalCode": "90210",
   "userName": "John Doe"
 }
-
-Response :
+```
+- Response :
+```bash
 {
     "data": {
         "weatherDescription": "mist",
@@ -70,14 +75,15 @@ Response :
     "status": "success",
     "timestamp": "2024-09-22T22:03:54.7289407"
 }
-
+```
 ### Fetch Weather History
-URL: /v1/api/weatherDetails/history
-Method: GET
-Query Parameters:
-postalCode (optional)
-userName (optional)
-Response:
+- URL: /v1/api/weatherDetails/history
+- Method: GET
+- Query Parameters:
+1. postalCode (optional)
+2. userName (optional)
+- Response:
+```bash
 {
     "data": [
         {
@@ -128,3 +134,4 @@ Response:
     "status": "success",
     "timestamp": "2024-09-22T23:15:56.971833"
 }
+``` 
